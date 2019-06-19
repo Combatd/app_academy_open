@@ -11,3 +11,23 @@ def hipsterfy (word)
     newWord = reverseWord.reverse
     return newWord
 end
+
+def vowel_counts (str)
+    newStr = str.downcase
+    
+    vowelHash = {
+        'a' => 0,
+        'e' => 0,
+        'i' => 0,
+        'o' => 0,
+        'u' => 0
+    }
+
+    newStr.each_char.with_index do |letter, i|
+        if letter == 'a' || letter == 'e' || letter == "i" || letter == 'o' || letter == 'u'
+            vowelHash[letter] += 1
+        end
+    end
+    
+    return vowelHash
+end
