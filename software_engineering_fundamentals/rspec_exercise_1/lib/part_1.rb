@@ -27,3 +27,20 @@ def yell (string)
     newStr = string.upcase
     return newStr += '!'
 end
+
+# alternating case accepts a string and alternates words between upcase/downcase
+def alternating_case (string)
+    strArr = string.split(' ')
+    caseArr = []
+    strArr.each_with_index do |word, i|
+        if i === 0
+            caseArr << word.upcase
+        elsif i % 2 != 0
+            caseArr << word.downcase
+        elsif i % 2 == 0
+            caseArr << word.upcase
+        end
+    end
+    caseWords = caseArr.join(' ')
+    return caseWords
+end
