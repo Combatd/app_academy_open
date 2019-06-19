@@ -31,3 +31,20 @@ def vowel_counts (str)
     
     return vowelHash
 end
+
+def caesar_cipher(message, n)
+alphabet = ('a'..'z').to_a 
+newStr = ""
+
+    message.each_char do |char|
+        if alphabet.include?(char)
+            oldIdx = alphabet.index(char)
+            newIdx = oldIdx + n
+            newStr += alphabet[newIdx % 26] # no jumping out of array
+        else
+            newStr += char # special characters not changed    
+        end
+    end    
+
+newStr # returns without keyword
+end
