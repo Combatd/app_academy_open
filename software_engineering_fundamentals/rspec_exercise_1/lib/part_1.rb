@@ -23,6 +23,7 @@ def repeat (str, num)
 end
 
 # yell accepts a string and makes it uppercase with an "!"
-def yell (str)
-
+def yell (string)
+    newStr = string.upcase
+    return newStr += '!'
 end
