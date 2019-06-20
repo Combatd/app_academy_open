@@ -36,3 +36,22 @@ def merge (hash_1, hash_2)
         
     mergedHash # return the merged hash
 end
+
+def censor (sentence, arr)
+    curseWords = { # hash containing substitutes for words
+        'darn' => 'd*rn',
+        'gosh' => 'g*sh',
+        'door' => 'd**r',
+        'DOOR' => 'D**R',
+        'Gosh' => 'G*sh'
+    }
+
+    sentArr = sentence.split(' ')
+    sentArr.each_with_index do |word, i|
+        if curseWords.has_key?(word)    
+            sentArr[i] = curseWords[word] # access the value of the word
+        end
+    end
+    newSentence = sentArr.join(' ') # join array back into a new sentence
+    newSentence # return the new sentence
+end
