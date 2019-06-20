@@ -55,3 +55,21 @@ def censor (sentence, arr)
     newSentence = sentArr.join(' ') # join array back into a new sentence
     newSentence # return the new sentence
 end
+
+def power_of_two? (num)
+  if num < 1
+    false
+  end 
+    
+        
+    if num === 1
+        true
+    elsif num % 2 == 0 && num % 3 != 0 && num % 7 != 0 && num % 10 != 0
+        # we check if it is divisible by 2 and not by 3, 7, 10 to prevent others
+        true # will divide until meeting one of the conditions
+    else 
+        false # return false if checks don't match
+    end
+  
+
+end
