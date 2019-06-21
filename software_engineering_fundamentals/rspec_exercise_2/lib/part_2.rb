@@ -32,3 +32,16 @@ def substrings (string)
     strArr << string[-1] # shovel last character in the array
     strArr # return the array
 end
+
+def palindrome_substrings (str)
+    palindromeArr = [] # empty array
+
+    substringsArr = substrings(str) # get the array of substrings
+    substringsArr.each do |ele|
+        # shovel each multi-char element into palindromeArr that is a palindrome 
+        if palindrome?(ele) == true && ele.length > 1
+            palindromeArr << ele
+        end
+    end
+    palindromeArr # return palindromeArr
+end
