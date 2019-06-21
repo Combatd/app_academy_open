@@ -4,12 +4,12 @@ def palindrome? (str)
     
     while i >= 0
         reverseStr += str[i]
-        i--  
+        i -= 1
     end
 
     if str == reverseStr
-        true
+       return true
     end
 
-    false
+    return false
 end
