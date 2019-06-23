@@ -4,15 +4,14 @@
 # is a prime. A prime number is only divisible by 1 and itself, it should have no other divisors.
 
 require "byebug"
-
-def prime(num)
+# boolean methods must have the '?'
+def prime?(num)
+    # do not include the num itself in the range for prime number check
     return false if num < 2
-
     (2...num).each do |factor|
         if num % factor == 0
             return false
-        else
-            return true
         end
     end
+    true # return true will happen after checking all integers below num
 end
