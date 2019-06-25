@@ -35,3 +35,22 @@ def unique_chars?(str)
     end
    return true
 end
+
+def dupe_indices (arr)
+   charHash = Hash.new(0) # new hash with default 0 values
+
+   arr.each_with_index do |char, i|
+      charHash[char] = [] # put each char as a key with empty array value
+   end
+
+   arr.join('').each_char.with_index do |char, i|
+      if charHash.include?(char)
+         charHash[char] << i # shovel index into value array
+      end
+   end
+
+   # delete if nested array (value) doesn't repeat
+   charHash.delete_if {|key, value| value.length < 2} 
+
+   charHash # return the charHash
+end
