@@ -54,3 +54,37 @@ def dupe_indices (arr)
 
    charHash # return the charHash
 end
+
+def ana_array (arr1, arr2)
+   # check if the two arrays are the same length
+   return false if arr1.length != arr2.length 
+
+   # create hashes to count the characters of both arrays
+   hash1 = Hash.new(0)
+   hash2 = Hash.new(0)
+
+   firstHash = char_count(arr1, hash1)
+   secondHash = char_count(arr2, hash2)
+
+   if firstHash == secondHash
+      return true
+   end
+
+   false
+
+end
+
+# helper methdo for ana_array
+def char_count (arr, hash)
+   arr.each_with_index do |k, i|
+      hash[k] = 0
+   end
+   
+   arr.each_with_index do |char, j|
+      if hash.has_key?(char)
+            hash[char] += 1
+      end
+   end
+
+   return hash
+end
