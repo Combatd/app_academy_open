@@ -4,14 +4,18 @@ def all_words_capitalized? (word_arr)
 end
 # not solved yet
 def no_valid_url? (url_arr)
-    if url_arr.any? { |string| string.end_with?('.org' || '.io' || ',net' || '.com') }
-        return false
-    elsif url_arr.none? { |string| string.end_with?('.org' || '.io' || ',net' || '.com') }
-        return true
+   valid_urls = ['.com', '.net', '.io', '.org']
+    # checks if NONE of the urls end with valid url endings
+    url_arr.none? do |url|
+        valid_urls.any? { |ending| url.end_with?(ending) }
     end
-    false 
+
 end
 
 def any_passing_students? (students_arr)
-   return students_arr.any? { |student| student[:grades].average >= 75 }
+   return students_arr.any? do |student|
+       # sum divides by number of grades to get average
+        avgGrade = student[:grades].sum / student[:grades].length 
+        avgGrade >= 75 # checking for this condition
+   end
 end
