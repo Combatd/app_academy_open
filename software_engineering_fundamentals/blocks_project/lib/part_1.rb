@@ -18,19 +18,21 @@ def count_positive_subarrays (arr)
 end
 
 def aba_translate (str)
-    letterArr = str.split('')
+    abaWord = '' # initialize empty string
     vowels = 'aeiou'
-    vowel_finder = letterArr.find_index {|letter| letter.include?(vowels) }
 
-    str.each_char.with_index do |letter, i|
-        if letter.include?(vowels)
-            str.insert(i, 'b' + letter)
+    str.each_char.with_index do |char, i|
+        if vowels.include?(char)
+            # add a b after every vowel followed by the same vowel
+            abaWord += char + 'b' + char
+        else
+            abaWord += char # add the original char
         end
     end
-    abaWord = letterArr.join('')
-    str
+    
+    abaWord # return the string
 end
 
 def aba_array (word_arr)
-    word_arr.select {|word| aba_translate(word)}
+    word_arr.map {|word| aba_translate(word)}
 end
