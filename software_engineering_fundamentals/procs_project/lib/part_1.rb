@@ -44,3 +44,15 @@ def my_all? (arr, &prc)
     return true if hash[true] == arr.length
     return false
 end
+
+def my_none? (arr, &prc)
+    hash = Hash.new(0)
+    arr.each do |ele| 
+       prc.call(ele)
+       key = prc.call(ele)
+       hash[key] += 1
+    end
+    # should return true if none of the elements are true according to block
+    return true if hash[true] < 1
+    return false
+end
