@@ -19,9 +19,28 @@ def my_count (arr, &prc)
         count += 1 if prc.call(num)
     end
 
-    count # return the number of elements that match prc conditions
+    count
 end
 # ampersand converts proc to block of code
 def my_any? (arr, &prc)
-   return arr.each { |ele| prc.call(ele) }
+   hash = Hash.new(0)
+    arr.each do |ele| 
+       prc.call(ele)
+       key = prc.call(ele)
+       hash[key] += 1
+    end
+    return true if hash[true] > 0
+    return false
+end
+
+def my_all? (arr, &prc)
+    hash = Hash.new(0)
+    arr.each do |ele| 
+       prc.call(ele)
+       key = prc.call(ele)
+       hash[key] += 1
+    end
+    # should return true if all elements return true
+    return true if hash[true] == arr.length
+    return false
 end
