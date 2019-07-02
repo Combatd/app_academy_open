@@ -12,3 +12,11 @@ def word_changer (str, &prc)
     end
     return newArr.join(' ') # join array back into one string
 end
+
+def greater_proc_value (num, prc_1, prc_2)
+    firstProcResult = prc_1.call(num)
+    secondProcResult = prc_2.call(num)
+
+    return firstProcResult if firstProcResult > secondProcResult
+    return secondProcResult if secondProcResult > firstProcResult
+end
