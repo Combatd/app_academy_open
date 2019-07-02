@@ -27,3 +27,19 @@ def and_selector (arr, prc_1, prc_2)
     newArr # return the new array
 end
 
+def alternating_mapper (arr, prc_1, prc_2)
+    newArr = [] # initialize empty array
+    # even indices prc_1 and odd indices prc_2
+    arr.each_with_index do |ele, i|
+        if i == 0
+            newArr << prc_1.call(ele)    
+        elsif i == 1
+            newArr << prc_2.call(ele)
+        elsif i % 2 == 0
+            newArr << prc_1.call(ele)
+        else
+            newArr << prc_2.call(ele)
+        end
+    end
+    newArr # return the new array
+end
