@@ -20,3 +20,10 @@ def greater_proc_value (num, prc_1, prc_2)
     return firstProcResult if firstProcResult > secondProcResult
     return secondProcResult if secondProcResult > firstProcResult
 end
+
+def and_selector (arr, prc_1, prc_2)
+    newArr = [] # initialize empty array
+    arr.each {|ele| newArr << ele if prc_1.call(ele) && prc_2.call(ele)}
+    newArr # return the new array
+end
+
