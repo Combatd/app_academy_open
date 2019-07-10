@@ -26,11 +26,20 @@ class Dog
     end
 
     # get bark
-    def bark
-        @bark # return instance variable
+    def bark # higher age dog will have capitalized bark
+        return @bark.upcase if @age > 3 # comparing age instance variable
+        return @bark.downcase
     end
+    
     # get favorite_foods
-    def favorite_food?
+    def favorite_foods
         @favorite_foods # return instance variable
+    end
+
+    def favorite_food? (food)
+        newFood = food.downcase
+        newArr = []
+        @favorite_foods.each {|ele| newArr << ele.downcase}
+        newArr.include?(newFood)
     end
 end
