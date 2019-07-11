@@ -40,9 +40,9 @@ class Bootcamp
     def enroll (student)
         if @students.length < @student_capacity
             @students << student # add the student to the array
-            true # the enrollment was successful
+            return true # the enrollment was successful
         else
-            false # the enrollment was not successful
+            return false # the enrollment was not successful
         end
     end
 
@@ -50,5 +50,22 @@ class Bootcamp
     def enrolled? (student)
         @students.include?(student) # returns true or false on array existence
     end
+
+    # student teacher ratio method
+    def student_to_teacher_ratio
+        ratio = @students.length / @teachers.length
+        ratio # return the ratio
+    end
+
+    # add grade will add grades (number) to the students that exist
+    def add_grade (student, grade)
+        if enrolled?(student)
+            @grades[student] << grade
+            return true # returns true
+        else
+            return false
+        end
+
+    end    
 
 end
