@@ -65,7 +65,18 @@ class Bootcamp
         else
             return false
         end
-
     end    
+    
+    # num grades tells the number of elements in the array accessed by student key
+    def num_grades (student)
+        @grades[student].length
+    end
 
+    def average_grade (student)
+        if enrolled?(student) && @grades[student].length > 0
+            return average = @grades[student].sum / @grades[student].length
+        else
+            nil
+        end    
+    end
 end
