@@ -18,6 +18,16 @@ class Array
         return nil
     end
  
-end
+ end
 
+ def median
+   return nil if self.length < 1
+    sortedArr = self.sort!
+   if sortedArr.length / 2 == 0 # check if even
+        return median = (sortedArr[sortedArr.length / 2] * 1.00 ) + ( sortedArr[sortedArr.length / 2 - 1] * 1.00 )
+   else
+        return median = sortedArr[sortedArr.length / 2]
+   end
+ 
+ end
 end
