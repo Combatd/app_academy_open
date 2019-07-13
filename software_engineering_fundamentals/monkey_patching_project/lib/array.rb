@@ -7,9 +7,17 @@ class Array
         return difference # return the difference
     else
         return nil      
-    end 
- 
+    end  
+
  end
 
+ def average
+    if self.length > 0
+        return average = self.sum * 1.00 / self.length * 1.00 # needs float result
+    else    
+        return nil
+    end
  
+end
+
 end
