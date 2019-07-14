@@ -43,4 +43,13 @@ class Array
     self.select{ |ele| ele === val }.length
  end
 
+ def my_index (val)
+    self.each_with_index {|ele, i| return i if ele === val }
+    nil
+ end
+
+ def my_uniq (val)
+    
+ end
+
 end
