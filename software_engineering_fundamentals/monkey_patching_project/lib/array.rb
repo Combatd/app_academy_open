@@ -48,8 +48,19 @@ class Array
     nil
  end
 
- def my_uniq (val)
+ def my_uniq
+    sortedArr = self 
     
+    countHash = Hash.new(0)
+    sortedArr.each_with_index do |ele, i|
+        countHash[ele] += 1
+    end
+    
+    newArr = []
+    # it will only select 1 of each hash key to put into new Array
+    countHash.select { |key, val| newArr << key}
+    
+    newArr
  end
 
 end
