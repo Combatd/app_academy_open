@@ -29,6 +29,18 @@ class Array
    else
         return median = sortedArr[len / 2]
    end
- 
  end
+
+ def counts
+    countHash = Hash.new(0) # initialize hash with 0 default values
+    self.each do |ele|
+        countHash[ele] += 1
+    end
+    countHash # return the hash
+ end
+
+ def my_count (val)
+    
+ end
+
 end
