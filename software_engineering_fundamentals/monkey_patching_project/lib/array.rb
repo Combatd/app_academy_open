@@ -40,7 +40,7 @@ class Array
  end
 
  def my_count (val)
-    
+    self.select{ |ele| ele === val }.length
  end
 
 end
