@@ -63,4 +63,16 @@ class Array
     newArr
  end
 
+ def my_transpose
+    arr = self
+    transposeArr = []
+    arr.each_with_index do |subArr, i|
+        transposeArr[i] = [] # we will clear this each iteration
+        subArr.each_with_index do |ele, j|
+            transposeArr[i] << arr[j][i] # shovel the element to move it
+        end
+    end
+    transposeArr
+ end
+
 end
