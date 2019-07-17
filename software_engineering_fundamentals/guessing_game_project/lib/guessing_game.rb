@@ -25,4 +25,10 @@ class GuessingGame
         end
     end
 
+    def ask_user
+        p 'enter a number' # prompt
+        num = gets.chomp # remove all /n from user input
+        guess = num.to_i # convert the string to an integer
+        check_num(guess) # call check num with the input as argument
+    end
 end
