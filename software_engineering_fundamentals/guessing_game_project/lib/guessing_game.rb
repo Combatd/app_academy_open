@@ -15,7 +15,14 @@ class GuessingGame
 
     def check_num (num)
         @num_attempts += 1 # increments each time user inputs a number
-        @game_over = true if num == @secret_num # ends game with correct guess
+        if num == @secret_num # ends game with correct guess
+            @game_over = true # end game with correct answer
+            p "you win" # print you win message
+        elsif num > @secret_num
+            p "too big"
+        else 
+            p "too small"    
+        end
     end
 
 end
