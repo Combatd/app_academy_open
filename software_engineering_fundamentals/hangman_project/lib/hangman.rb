@@ -42,4 +42,22 @@ class Hangman
     indices_arr.each { |idx| @guess_word[idx] = char }
   end
 
+  def try_guess (char)
+     # matching indexes will pass into fill_indices
+    matchingIdx = get_matching_indices(char)
+    if matchingIdx.length == 0
+      @remaining_incorrect_guesses -= 1 # wrong guess
+    end
+    fill_indices(char, matchingIdx)
+    
+    if already_attempted?(char)
+      puts "that has already been attempted"
+      return false # indicates guess was previously attempted
+    else
+      @attempted_chars << char
+      return true # indicates guess was NOT previously attempted
+    end  
+  
+  end
+
 end
