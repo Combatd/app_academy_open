@@ -57,7 +57,36 @@ class Hangman
       @attempted_chars << char
       return true # indicates guess was NOT previously attempted
     end  
-  
+  end
+
+  def ask_user_for_guess
+    puts 'Enter a char:'
+    char = gets.chomp # input number without newline
+    try_guess(char) # passes input into try_guess and returns values
+  end
+
+  def win?
+    if @guess_word.join('') == @secret_word # @guess_word needs to be a string
+      puts 'WIN'
+      return true
+    end
+    false
+  end
+
+  def lose? # boolean method
+    if @remaining_incorrect_guesses < 1
+      puts 'LOSE'
+      return true
+    end
+    false
+  end
+
+  def game_over? # boolean method
+   if win? || lose?
+    puts @secret_word
+    return true
+   end
+   false
   end
 
 end
