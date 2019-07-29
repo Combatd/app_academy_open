@@ -47,9 +47,14 @@ class Startup
   end
 
   def average_salary
-    salaries_arr = @salaries.map do |job, idx|
-      @employees.title
+    sum = 0 # accumulator
+    
+    @employees.each do |employee|
+      
+      sum += @salaries[employee.title] # salary for each employee
     end
+
+    sum / @employees.length * 1.0 # force double output
   end
 
   def close 
@@ -58,7 +63,16 @@ class Startup
   end
 
   def acquire (another_startup) 
+    @funding += another_startup.funding # add funding
     
+    another_startup.salaries.each do |title, amount| # merge salaries
+      if !@salaries.has_key?(title) # if the title doesn't exist
+        @salaries[title] = amount # add the new salary with title
+      end
+    end
+
+    @employees += another_startup.employees # concat the arrays
+    another_startup.close # close the other startup
   end
 
 end
