@@ -53,16 +53,10 @@ class Code
   def num_near_matches(guess_instance)
     nearMatches = 0 # accumulator
     guess_instance.pegs.each_with_index do |char, i|
-      prevChar = self.pegs[i - 1] # compares to secret pegs
-      nextChar = self.pegs[i + 1] # compares to secret pegs
-      if i == 0 && char == nextChar
-        nearMatches += 1
-      elsif i > 0 && (char == prevChar || char == nextChar)
-        nearMatches += 1
-      elsif char == self.pegs[-1] && char == prevChar
+      # if it is not an exact match, but is at another index
+      if char != self[i] && self.pegs.include?(char)
         nearMatches += 1
       end
-      
     end
     nearMatches # return the number of near matches
   end
