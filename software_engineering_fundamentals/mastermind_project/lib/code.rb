@@ -67,4 +67,8 @@ class Code
     nearMatches # return the number of near matches
   end
 
+  def ==(other_code) # syntactic sugar
+    self.pegs == other_code.pegs 
+  end
+
 end
