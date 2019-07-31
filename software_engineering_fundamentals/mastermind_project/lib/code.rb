@@ -44,4 +44,10 @@ class Code
     @pegs.length
   end
 
+  def num_exact_matches (guess_instance)
+    exactMatches = 0
+    guess_instance.pegs.each_with_index { |char, i| exactMatches += 1 if char == @pegs[i] }
+    exactMatches # return the amount of exact matches
+  end
+
 end
