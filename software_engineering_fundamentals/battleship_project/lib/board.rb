@@ -1,6 +1,8 @@
 class Board
   attr_reader :size # getter methods  
   
+    new_board = Board.new
+
   def initialize (n)
     board = Array.new(n) # take in the number
     n.times do |row_idx|
@@ -27,6 +29,22 @@ class Board
 
   def num_ships
     @grid.count { |ele| ele.include?(:S)}  
+  end
+
+  def attack (pos)
+    row = pos[0]
+    col = pos[1]
+    position = pos.flatten
+    if self[position] == :S
+        puts 'you sunk my battleship!'
+        # @grid[row][col]
+        self[position]= :H 
+        return true # indicate attack hit a ship
+    else
+        # @grid[row][col] 
+        self[position]= :X # missed hit marked by X
+        return false # indicate attack missed
+    end
   end
 
 end
