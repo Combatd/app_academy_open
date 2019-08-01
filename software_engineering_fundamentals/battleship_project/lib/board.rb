@@ -1,7 +1,5 @@
 class Board
   attr_reader :size # getter methods  
-  
-    new_board = Board.new
 
   def initialize (n)
     board = Array.new(n) # take in the number
@@ -45,6 +43,10 @@ class Board
         self[position]= :X # missed hit marked by X
         return false # indicate attack missed
     end
+  end
+
+  def place_random_ships
+    
   end
 
 end
