@@ -43,6 +43,22 @@ end
 # lucas_number(5)   # =>    11
 # lucas_number(9)   # =>    76
 def lucas_number(n)
+    if n === 0
+        return 2
+    elsif n === 1
+        return 1
+    elsif n === 2
+        return 3
+    else
+        prev_num = n - 1
+    last_two_num = n - 2
+    end
+    
+    if n > 2
+        n = prev_num + last_two_num
+        lucas_number(prev_num) + lucas_number(last_two_num)    
+    end
+    
 
 end
 
@@ -59,7 +75,7 @@ end
 # sum_array([5, 2])         # => 7
 # sum_array([4, 10, -1, 2]) # => 15
 def sum_array(array)
-
+    
 end
 
 
