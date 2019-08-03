@@ -75,7 +75,11 @@ end
 # sum_array([5, 2])         # => 7
 # sum_array([4, 10, -1, 2]) # => 15
 def sum_array(array)
-    
+    # base case  
+    if array.empty? # checks if array length is 0
+        return 0
+    end
+   array[0] + sum_array(array[1..-1]) # pass in the rest besides first ele
 end
 
 
@@ -91,7 +95,10 @@ end
 # reverse_string("internet")    # => "tenretni"
 # reverse_string("friends")     # => "sdneirf"
 def reverse_string(str)
-
+   return str if str.length <= 1  
+   reverseStr = reverse_string(str[1..-1]) # don't attempt to reverse first
+    reverseStr += str[0]
+    reverseStr
 end
 
 
@@ -124,5 +131,12 @@ end
 #     2-dimensional array: [['some data']]
 #     3-dimensional array: [[['some data']]]
 def flatten(data)
-
+    return [data] if !data.is_a?(Array) # check if array when passed in 
+    result = []     
+    data.each do |ele|
+        result += flatten(ele) # concatenate to the result array
+    end
+   
+    # no other checks of data type needed!
+    result # return the flattened array
 end
