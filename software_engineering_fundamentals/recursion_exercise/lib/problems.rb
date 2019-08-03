@@ -12,7 +12,15 @@
 # pow(3, 4) # => 81
 # pow(4, 3) # => 64
 def pow(base, exponent)
-
+    if exponent == 0
+        return 1
+    elsif exponent == 1 # this will exit the method call
+        return base
+    else 
+        # we will reassign the base the new value each method call
+        base = base * pow(base, exponent - 1) # recursion
+        base
+    end
 end
 
 
