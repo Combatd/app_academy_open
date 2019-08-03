@@ -46,7 +46,42 @@ class Board
   end
 
   def place_random_ships
+    totalShips = @size * 0.25 # 25% of the ships
     
+    while self.num_ships < totalShips
+      randomRow = rand(0...@grid.length)
+      randomCol = rand(0...@grid.length)
+      pos = [ randomRow, randomCol ] # we can pass this pos into #[]
+      self[pos] = :S
+    end
+
+  end
+
+  def hidden_ships_grid
+    (0..size).each do |row|
+        (0..size).each do |col|
+            self[row, col]= :N
+        end
+    end
+
+  end
+
+  def self.print_grid(grid)
+     (0..grid.length).each do |row_idx|
+        rowEle = grid[row_idx] 
+        puts "#{rowEle} "
+        (0..grid[row_idx].length).each do |col_idx|
+            
+        end
+    end
+  end
+
+  def cheat
+    self.print_grid(@grid)
+  end
+
+  def print
+    self.print_grid(self.hidden_ships_grid)
   end
 
 end
