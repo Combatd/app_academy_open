@@ -6,7 +6,17 @@
 #
 # all_vowel_pairs(["goat", "action", "tear", "impromptu", "tired", "europe"])   # => ["action europe", "tear impromptu"]
 def all_vowel_pairs(words)
-
+    vowels = { 'a' => 0, 'e' => 0, 'i' => 0, 'o' => 0, 'u' => 0  }
+    word_arr = []
+    words.each_with_index do |word, i|
+        tempArr = []
+        tempArr << word
+        tempArr << words[i + 2]
+        if tempArr.all?(vowels.keys) 
+            word_arr + tempArr
+        end
+    end
+    word_arr
 end
 
 
@@ -18,7 +28,8 @@ end
 # composite?(9)     # => true
 # composite?(13)    # => false
 def composite?(num)
-
+    (2...num).each { |factor| return true if num % factor === 0 }
+    false
 end
 
 
