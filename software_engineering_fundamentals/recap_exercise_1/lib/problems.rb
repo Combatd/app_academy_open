@@ -94,10 +94,10 @@ class String
         string = self
          i = 0
 
-    while i < string.length - 1
-        newStr = '' # string empties each loop iteration
+        while i < string.length - 1
+            newStr = '' # string empties each loop iteration
         
-        string.each_char.with_index do |char, j|
+            string.each_char.with_index do |char, j|
             if j >= i
                 newStr += char
                 if length != nil
