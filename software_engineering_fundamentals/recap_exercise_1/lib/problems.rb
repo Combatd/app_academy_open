@@ -90,7 +90,35 @@ class String
     # "cats".substrings     # => ["c", "ca", "cat", "cats", "a", "at", "ats", "t", "ts", "s"]
     # "cats".substrings(2)  # => ["ca", "at", "ts"]
     def substrings(length = nil)
+         strArr = [] # empty array
+        string = self
+         i = 0
+
+    while i < string.length - 1
+        newStr = '' # string empties each loop iteration
         
+        string.each_char.with_index do |char, j|
+            if j >= i
+                newStr += char
+                if length != nil
+                # each time a char added, it is a new ele of strArr
+                    strArr << newStr if newStr.length === length
+                else
+                    strArr << newStr
+                end
+            end    
+        end # end each char loop
+        i += 1
+    end  # end while loop
+    strArr << string[-1] # shovel last character in the array
+    
+    if length != nil
+        strArr.each_with_index do |ele, i|
+            strArr.delete(ele) if ele.length > length || ele.length < length
+        end
+    end
+    
+    strArr # return the array
     end
 
 
