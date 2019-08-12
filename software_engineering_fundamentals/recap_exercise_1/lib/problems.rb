@@ -6,14 +6,14 @@
 #
 # all_vowel_pairs(["goat", "action", "tear", "impromptu", "tired", "europe"])   # => ["action europe", "tear impromptu"]
 def all_vowel_pairs(words)
-    vowels = { 'a' => 0, 'e' => 0, 'i' => 0, 'o' => 0, 'u' => 0  }
+    vowels = 'aeiou'
     word_arr = []
-    words.each_with_index do |word, i|
+    (0...words.length).each_with_index do |word, i|
         tempArr = []
         tempArr << word
-        tempArr << words[i + 2]
-        if tempArr.all?(vowels.keys) 
-            word_arr + tempArr
+        tempArr << words[i + 1]
+        if tempArr.include?(vowels)
+            word_arr << tempArr.join('')
         end
     end
     word_arr
@@ -64,8 +64,19 @@ class Hash
     # hash_2 = {4=>4, 10=>11, 12=>3, 5=>6, 7=>8}
     # hash_2.my_select { |k, v| k + 1 == v }      # => {10=>11, 5=>6, 7=>8})
     # hash_2.my_select                            # => {4=>4}
-    def my_select(&prc)
-        
+    def my_select(&prc) # class method
+        select_hash = {} # empty hash
+
+        if prc === nil
+        select_hash = self.each_key
+        end
+          
+        self.each_pair do |k, v| 
+            if prc.call(self) # if the conditions of the block is true
+                select_hash[k] = v # the key value pair goes into new hash
+            end
+        end
+        select_hash # return the new hash
     end
 end
 
@@ -93,6 +104,16 @@ class String
     # "bootcamp".caesar_cipher(2) #=> "dqqvecor"
     # "zebra".caesar_cipher(4)    #=> "difve"
     def caesar_cipher(num)
-        
+        str = self
+        alphabet = "abcdefghijklmnopqrstuvwxyz"
+  	    newWord = "" # empty string
+
+  	    str.each_char do |i| # string method to iterate through the characters of str
+            oldEle = alphabet.index(i) # i would be the character of the string
+            newEle = oldEle + num # number
+            newChar = alphabet[newEle % 26] # it will find the character index that matches the alphabet index
+            newWord += newChar
+        end
+        newWord
     end
 end
