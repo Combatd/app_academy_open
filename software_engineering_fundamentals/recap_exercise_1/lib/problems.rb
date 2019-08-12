@@ -43,7 +43,11 @@ end
 # find_bigrams("the theater is empty", ["cy", "em", "ty", "ea", "oo"])  # => ["em", "ty", "ea"]
 # find_bigrams("to the moon and back", ["ck", "oo", "ha", "at"])        # => ["ck", "oo"]
 def find_bigrams(str, bigrams)
-
+    new_arr = [] # empty array
+    bigrams.each_with_index do |ele, i|
+        new_arr << ele if str.include?(ele)
+    end
+    new_arr # return the new array
 end
 
 class Hash
