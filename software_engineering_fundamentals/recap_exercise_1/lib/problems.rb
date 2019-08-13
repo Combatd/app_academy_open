@@ -6,17 +6,17 @@
 #
 # all_vowel_pairs(["goat", "action", "tear", "impromptu", "tired", "europe"])   # => ["action europe", "tear impromptu"]
 def all_vowel_pairs(words)
-    vowels = 'aeiou'
-    word_arr = []
-    (0...words.length).each_with_index do |word, i|
-        tempArr = []
-        tempArr << word
-        tempArr << words[i + 1]
-        if tempArr.include?(vowels)
-            word_arr << tempArr.join('')
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    pairs = [] # empty array
+    words.each_with_index do |word_1, i|
+        words.each_with_index do |word_2, j|
+            pair = word_1 + " " + word_2
+            if j > i && vowels.all? { |vow| pair.include?(vow) } 
+             pairs << pair
+            end
         end
     end
-    word_arr
+    pairs
 end
 
 
@@ -66,17 +66,13 @@ class Hash
     # hash_2.my_select                            # => {4=>4}
     def my_select(&prc) # class method
         select_hash = {} # empty hash
+        # nil as falsey shorthand
+        prc ||= Proc.new { |k, v| k == v}
+        self.each_pair do |k, v|
+           select_hash[k] = v if prc.call(k, v)
+        end
 
-        if prc === nil
-        select_hash = self.each_key
-        end
-          
-        self.each_pair do |k, v| 
-            if prc.call(self) # if the conditions of the block is true
-                select_hash[k] = v # the key value pair goes into new hash
-            end
-        end
-        select_hash # return the new hash
+        select_hash
     end
 end
 
