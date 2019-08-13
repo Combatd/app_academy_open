@@ -10,6 +10,16 @@ end
 # Write a method, most_frequent_bigram, that takes in a string and returns the two adjacent letters that appear the
 # most in the string.
 def most_frequent_bigram(str)
+    bigram_arr = [] # empty array
+    bigram_hash = Hash.new(0)
+    # get each bigram
+    str.each_char.with_index do |ele, i|
+        bigram_arr << ele += str[ (i + 1) % str.length]
+    end
+    
+    bigram_arr.each do |bigram|
+        bigram_hash.each_value {|val| bigram_hash[val] = bigram }
+    end
 
 end
 
@@ -17,7 +27,13 @@ end
 class Hash
     # Write a method, Hash#inverse, that returns a new hash where the key-value pairs are swapped
     def inverse
-
+        hash = self
+        
+        oldVals = hash.values
+        oldKeys = hash.keys
+        # zip takes array of keys and pases in array of values to the hash
+        new_hash = Hash[oldVals.zip(oldKeys)]
+        new_hash
     end
 end
 
