@@ -74,3 +74,16 @@ function isSubstring(searchString, subString) {
 
 console.log(isSubstring("time to program", "time"));
 console.log(isSubstring("Jump for joy", "joys"));
+
+
+const fizzBuzz = (arr) => {   
+    const newArr = [];
+    arr.forEach( (ele) => {
+       if ((ele % 3 === 0 || ele % 5 === 0) && !(ele % 3 === 0 && ele % 5 === 0)) {
+           newArr.push(ele);
+       }    
+    });
+    return newArr;
+}
+
+console.log(fizzBuzz([1,2,3,4,5,6,7,8,9,10]));
