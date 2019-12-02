@@ -65,4 +65,12 @@ const madLib = (verb, adjective, noun) => {
     return `We shall ${verb.toUpperCase()} the ${adjective.toUpperCase()} ${noun.toUpperCase()}.`
 };
 
-console.log(madLib('make', 'best', 'guac'))
+console.log(madLib('make', 'best', 'guac'));
+
+
+function isSubstring(searchString, subString) {
+    return searchString.includes(subString);
+}
+
+console.log(isSubstring("time to program", "time"));
+console.log(isSubstring("Jump for joy", "joys"));
