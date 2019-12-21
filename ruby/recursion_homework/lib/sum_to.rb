@@ -16,3 +16,10 @@ def gamma_fnc(n)
     return n if n === 1
     result = (n - 1) * gamma_fnc(n - 1)
 end
+
+def ice_cream_shop(flavors, favorite)
+    return false if !(flavors.first)
+    return flavors.first === favorite if flavors.length === 1
+    return true if flavors[-1] === favorite
+    ice_cream_shop(flavors[0...-1], favorite)
+end
