@@ -14,6 +14,5 @@ def gamma_fnc(n)
     return nil if !(n.is_a? (Numeric))
     return nil if n < 1
     return n if n === 1
-    originalNum = 0 + n
     result = (n - 1) * gamma_fnc(n - 1)
 end
