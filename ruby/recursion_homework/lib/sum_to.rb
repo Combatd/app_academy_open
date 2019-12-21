@@ -23,3 +23,8 @@ def ice_cream_shop(flavors, favorite)
     return true if flavors[-1] === favorite
     ice_cream_shop(flavors[0...-1], favorite)
 end
+
+def reverse(string)
+    return string if string.length < 2
+    reverse(string[1...-1] + string[0])
+end
