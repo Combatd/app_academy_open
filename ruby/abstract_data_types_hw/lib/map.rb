@@ -12,11 +12,11 @@ class Map
     end
 
     def delete(key)
-
+        @map = @map.filter { |set| set.first !== key }
     end
 
     def show
-
+        
     end
 
 end
