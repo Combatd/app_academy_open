@@ -1,10 +1,12 @@
   class Stack
     def initialize
       # create ivar to store stack here!
+      @array = array
     end
 
     def push(el)
       # adds an element to the stack
+      
     end
 
     def pop
