@@ -3,7 +3,7 @@
 
     def initialize
       # create ivar to store stack here!
-      @array = Array.new
+      @array = []
     end
 
     def push(el)
