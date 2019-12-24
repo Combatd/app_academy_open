@@ -8,7 +8,7 @@
 
     def push(el)
       # adds an element to the stack
-      
+      @array << el
     end
 
     def pop
