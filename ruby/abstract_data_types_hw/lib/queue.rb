@@ -8,7 +8,7 @@ class Queue
     end
 
     def dequeue(el)
-
+        @queue.shift
     end
 
     def peek
