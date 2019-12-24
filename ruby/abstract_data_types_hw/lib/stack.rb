@@ -1,4 +1,6 @@
   class Stack
+    attr_reader = :array
+
     def initialize
       # create ivar to store stack here!
       @array = array
