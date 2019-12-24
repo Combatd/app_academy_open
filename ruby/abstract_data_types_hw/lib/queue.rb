@@ -7,12 +7,12 @@ class Queue
         @queue.unshift(el)
     end
 
-    def dequeue(el)
-        @queue.shift
+    def dequeue
+        @queue.pop
     end
 
     def peek
-
+        @queue.first
     end
 
 end
