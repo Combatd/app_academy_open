@@ -18,5 +18,6 @@
 
     def peek
       # returns, but doesn't remove, the top element in the stack
+      @array[-1]
     end
   end
