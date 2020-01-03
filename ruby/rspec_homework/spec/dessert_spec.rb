@@ -10,7 +10,7 @@ describe Dessert do
 
   describe "#initialize" do
     it "sets a type"
-
+      expect(brownie.type).to eq('brownie')
     it "sets a quantity"
 
     it "starts ingredients as an empty array"
