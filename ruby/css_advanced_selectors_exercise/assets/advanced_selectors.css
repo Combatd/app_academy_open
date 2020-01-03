@@ -43,8 +43,26 @@ ol {
   font-weight: bold;
 }
 
-option, select, input {
+option {
   cursor: pointer;
   outline: none;
+}
+
+select {
+  cursor: pointer;
+  outline: none;
+}
+
+input {
+  cursor: pointer;
+  outline: none;
+}
+
+input:last-child {
+  background-color: rgb(143, 127, 38);
+}
+
+input:last-child:hover {
+  background-color: rgb(70, 64, 33);
 }
 
