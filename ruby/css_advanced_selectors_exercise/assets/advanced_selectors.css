@@ -3,7 +3,7 @@
 body {
   /* If the user cannot load the Arial font, the sans-serif font is used */
   font-family: Arial, sans-serif;
-  background-color: #FEFFF1;
+  background-color: rgb(196, 163, 78);
 }
 
 h1 {
