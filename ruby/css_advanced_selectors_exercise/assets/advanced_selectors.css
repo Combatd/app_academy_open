@@ -81,4 +81,7 @@ button[type="submit"] {
   outline: none;
 }
 
+#reviews + .user_review:nth-child(1) {
+  border: 1px solid black;
+}
 
