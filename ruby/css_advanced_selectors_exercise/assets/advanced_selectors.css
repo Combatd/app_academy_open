@@ -43,11 +43,6 @@ ol {
   font-weight: bold;
 }
 
-option {
-  cursor: pointer;
-  outline: none;
-}
-
 select {
   cursor: pointer;
   outline: none;
@@ -70,4 +65,20 @@ li > a {
   color: inherit;
   text-decoration: none;
 }
+
+input[type="radio"] {
+  cursor: pointer;
+  outline: none;
+}
+
+select {
+  cursor: pointer;
+  outline: none;
+}
+
+button[type="submit"] {
+  cursor: pointer;
+  outline: none;
+}
+
 

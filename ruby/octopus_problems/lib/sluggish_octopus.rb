@@ -17,4 +17,22 @@ class Array
         longest_fish
     end
 
+    # Find the longest fish in O(n log n) time. 
+    # Hint: You saw a sorting algorithm that runs in O(n log n) in the Sorting Complexity Demo. 
+    # Remember that Big O is classified by the dominant term.
+
+    def linearithmic
+        queue = []
+        queue << self.first 
+        longest_fish = queue.first
+        while !queue.empty?
+            longest_fish = queue.first if queue.first.length > longest_fish.length
+            self[1..self.length].each do 
+                |fish| queue << fish
+                queue.shift
+            end
+        end
+        longest_fish
+    end
+
 end
