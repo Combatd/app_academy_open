@@ -66,9 +66,31 @@ li > a {
   text-decoration: none;
 }
 
+
 input[type="radio"] {
   cursor: pointer;
   outline: none;
+  -webkit-appearance: none;
+  width: 27px;
+  height: 27px;
+  vertical-align: bottom;
+  background-image: url('./stars.png');
+  background-position: top;
+}
+
+input[type="radio"]:hover{
+  -webkit-appearance: none;
+  vertical-align: bottom;
+  background-image: url('./stars.png');
+  background-position: center;
+}
+
+
+
+input[type="radio"]:checked {
+  -webkit-appearance: none;
+  background-image: url('./stars.png');
+  background-position: bottom;
 }
 
 select {
