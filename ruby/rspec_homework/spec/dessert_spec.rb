@@ -1,4 +1,5 @@
 require 'rspec'
+require 'chef'
 require 'dessert'
 
 =begin
@@ -6,19 +7,20 @@ Instructions: implement all of the pending specs (the `it` statements without bl
 =end
 
 describe Dessert do
-  let(:chef) { double("chef") }
+  let(:chef) { double("chef", name: "Paul") }
   subject(:brownie) { Dessert.new('brownie', 1 , chef) }
 
   describe "#initialize" do
 
-    it "sets a type"
+    it "sets a type" do
       expect(brownie.type).to eq('brownie')
-    it "sets a quantity"
-      expect(brownie.quantity).to eq(1)
-    it "starts ingredients as an empty array"
-      expect(brownie.ingredient).to eq([])
-    it "raises an argument error when given a non-integer quantity"
-    expect(Dessert.new('cake', 'one', chef)).to raises_error(ArgumentErro)
+    end
+    # it "sets a quantity"
+    #   expect(brownie.quantity).to eq(1)
+    # it "starts ingredients as an empty array"
+    #   expect(brownie.ingredient).to eq([])
+    # it "raises an argument error when given a non-integer quantity"
+    #   expect { Dessert.new('brownie', 'asdf', chef)}
   end
 
   describe "#add_ingredient" do
