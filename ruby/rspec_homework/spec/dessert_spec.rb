@@ -54,7 +54,10 @@ describe Dessert do
       expect(brownie.quantity).to eq(0)
     end
 
-    it "raises an error if the amount is greater than the quantity"
+    it "raises an error if the amount is greater than the quantity" do
+      expect(brownie.quantity).to eq(1)
+      expect { brownie.eat(9001) }.to raise_error("not enough left!")
+    end
   end
 
   describe "#serve" do
