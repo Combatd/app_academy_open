@@ -36,7 +36,15 @@ describe Dessert do
   end
 
   describe "#mix!" do
-    it "shuffles the ingredient array"
+    it "shuffles the ingredient array" do
+      brownie.add_ingredient('butter')
+      brownie.add_ingredient('chocolate')
+      brownie.add_ingredient('sugar')
+      random_ingredients = ['butter', 'chocolate', 'sugar']
+      expect(brownie.ingredients).to eq(random_ingredients)
+      brownie.mix!
+      expect(brownie.ingredients.sort).to eq(random_ingredients.sort)
+    end
   end
 
   describe "#eat" do
