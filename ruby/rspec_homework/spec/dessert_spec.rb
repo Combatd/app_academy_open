@@ -27,7 +27,12 @@ describe Dessert do
   end
 
   describe "#add_ingredient" do
-    it "adds an ingredient to the ingredients array"
+    it "adds an ingredient to the ingredients array" do
+      expect(brownie.ingredients).to_not include('chocolate')
+      brownie.add_ingredient('chocolate')
+      expect(brownie.ingredients).to include('chocolate')
+    end
+    
   end
 
   describe "#mix!" do
