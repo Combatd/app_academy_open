@@ -11,3 +11,10 @@ CREATE TABLE animals(
 
     FOREIGN KEY (country_id) REFERENCES countries(id)
 );
+
+INSERT INTO
+    countries
+    (name, population)
+VALUES
+    ('United States', 327000000)
+;
