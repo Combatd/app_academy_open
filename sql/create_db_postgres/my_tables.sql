@@ -18,3 +18,21 @@ INSERT INTO
 VALUES
     ('United States', 327000000)
 ;
+
+INSERT INTO
+    animals
+    (name, country_id)
+VALUES
+    ('Racoon',
+    (SELECT id
+    FROM countries
+    WHERE name = 'United States')),
+    ('Black Bear',
+    (SELECT id
+    FROM countries
+    WHERE name = 'United States')),
+    ('Bald Eagle',
+    (SELECT id
+    FROM countries
+    WHERE name = 'United States'))
+;
