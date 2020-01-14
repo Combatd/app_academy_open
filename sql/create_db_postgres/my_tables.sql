@@ -37,5 +37,5 @@ VALUES
     WHERE name = 'United States'))
 ;
 
-DROP TABLE animals;
-DROP TABLE countries;
+-- DROP TABLE animals;
+-- DROP TABLE countries;
