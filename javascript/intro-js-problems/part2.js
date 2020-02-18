@@ -1,4 +1,4 @@
-// Phase 1: Callbacks
+// Phase I: Callbacks
 // Write a function titleize that takes an array of names and a function (callback).
 // titleize should use Array.prototype.map to create a new array full of 
 // titleized versions of each name
@@ -20,3 +20,11 @@ function printCallback(titleizedNames) {
 }
 
 printCallback(newNames);
+
+
+
+// Phase II: Constructors, Prototypes, and this
+// First write a constructor function for an elephant.
+// Each elephant should have a name, height(in inches), 
+// and array of tricks in gerund form
+// (e.g. "painting a picture" rather than "paint a picture").
