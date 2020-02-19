@@ -41,8 +41,15 @@ function Elephant(name, height, tricks) {
         this.height = this.height + 12;
         console.log(`${this.name} height is now ${this.height}`);
     }
+
+    this.addTrick = (trick) => {
+        this.tricks.push(trick);
+    }
 }
 
 const eli = new Elephant("eli", 100);
 eli.trumpet();
 eli.grow();
+eli.addTrick("eating");
+eli.addTrick("drinking");
+console.log(eli.tricks);
