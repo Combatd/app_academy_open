@@ -34,9 +34,15 @@ function Elephant(name, height, tricks) {
     this.tricks = [] // initalize empty array
 
     this.trumpet = () => {
-        console.log(`${this.name} the elephant goes 'phrRRRRRRRRRRR!!!!!!!'`)
+        console.log(`${this.name} the elephant goes 'phrRRRRRRRRRRR!!!!!!!'`);
+    }
+
+    this.grow = function() {
+        this.height = this.height + 12;
+        console.log(`${this.name} height is now ${this.height}`);
     }
 }
 
 const eli = new Elephant("eli", 100);
 eli.trumpet();
+eli.grow();
