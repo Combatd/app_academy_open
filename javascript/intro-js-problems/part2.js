@@ -28,3 +28,15 @@ printCallback(newNames);
 // Each elephant should have a name, height(in inches), 
 // and array of tricks in gerund form
 // (e.g. "painting a picture" rather than "paint a picture").
+function Elephant(name, height, tricks) {
+    this.name = name;
+    this.height = height;
+    this.tricks = [] // initalize empty array
+
+    this.trumpet = () => {
+        console.log(`${this.name} the elephant goes 'phrRRRRRRRRRRR!!!!!!!'`)
+    }
+}
+
+const eli = new Elephant("eli", 100);
+eli.trumpet();
