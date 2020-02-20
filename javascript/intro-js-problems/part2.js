@@ -51,7 +51,7 @@ function Elephant(name, height, tricks) {
     }
 
     this.paradeHelper = (elephant) => {
-        console.log(`${this.name} is trotting by!`);
+        console.log(`${elephant} is trotting by!`);
     }
 }
 
@@ -79,3 +79,6 @@ let herd = [ellie, charlie, kate, micah];
 // Make sure to store it as a property on the Elephant object. 
 // You can populate it with any console.log statement you want to 
 // build your parade (e.g. "___ is trotting by!").
+
+
+herd.forEach( (elephant) => elephant.paradeHelper(elephant.name) );
