@@ -45,6 +45,10 @@ function Elephant(name, height, tricks) {
     this.addTrick = (trick) => {
         this.tricks.push(trick);
     }
+
+    this.play = function() {
+        console.log(`${this.name} is ${this.tricks[Math.floor(Math.random() * ((this.tricks.length) - 0) + 0)]}`);
+    }
 }
 
 const eli = new Elephant("eli", 100);
@@ -53,3 +57,4 @@ eli.grow();
 eli.addTrick("eating");
 eli.addTrick("drinking");
 console.log(eli.tricks);
+eli.play()
