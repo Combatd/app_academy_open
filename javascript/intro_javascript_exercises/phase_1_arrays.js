@@ -30,4 +30,14 @@ Array.prototype.twoSum = function() {
     return positionPairs;
 }
 
-console.log(arr1.twoSum());
+// Array#transpose - where we have a two-dimensional array representing a matrix. returns the transpose
+
+Array.prototype.transpose = function() {
+    transposedArray = []
+    self.map( (subArray, index) => {
+        for(j = 0; j < subArray.length; j++) {
+            transposedArray[index].push(self[j][index]);
+        }
+    });
+    return transposedArray;
+}
