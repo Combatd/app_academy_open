@@ -19,7 +19,15 @@ arr1.uniq();
 // Array#twoSum - returns an array of position pairs where the elements sum to zero
 
 Array.prototype.twoSum = function() {
-    newArray = this.map( (element, index) => {
-        
+    positionPairs = [];
+    this.forEach( (element, index) => {
+        for (let i = index + 1; i < this.length; i++) {
+            if (element + this[i] == 0) {
+                positionPairs.push(index, i);
+            }
+        }
     })
+    return positionPairs;
 }
+
+console.log(arr1.twoSum());
