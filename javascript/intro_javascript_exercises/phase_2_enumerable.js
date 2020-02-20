@@ -16,7 +16,9 @@ Array.prototype.myEach = function(callback) {
 Array.prototype.myMap = function(callback) {
     newArray = []
     function runCallback() {
-        return self.myEach(callback);
+        for(let i = 0; i < self.length; i++) {
+            newArray.push(self.myEach(callback));
+        }
     } 
     newArray = runCallback();
     return newArray;
