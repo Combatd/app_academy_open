@@ -49,6 +49,10 @@ function Elephant(name, height, tricks) {
     this.play = function() {
         console.log(`${this.name} is ${this.tricks[Math.floor(Math.random() * ((this.tricks.length) - 0) + 0)]}`);
     }
+
+    this.paradeHelper = (elephant) => {
+        console.log(`${this.name} is trotting by!`);
+    }
 }
 
 const eli = new Elephant("eli", 100);
