@@ -82,3 +82,26 @@ let herd = [ellie, charlie, kate, micah];
 
 
 herd.forEach( (elephant) => elephant.paradeHelper(elephant.name) );
+
+// Phase IV: Closures
+
+// Let's make a function dinerBreakfast. 
+// Ultimately, we want it to return an anonymous closure, 
+// which we will be able to use to keep adding 
+// breakfast foods to our initial order.
+
+const dinerBreakfast = (food) => {
+    let order = ["cheesey scrambled eggs"];
+    // join the order from array elements into a string
+    console.log(`I'd like ${order.join(' and ')} please.`);
+
+    // anonymous arrow function is closure that returns right away
+    return (food) => {
+        order.push(food);
+        console.log(`I'd like ${order.join(' and ')} please.`);
+    }
+}
+
+let bfastOrder = dinerBreakfast();
+bfastOrder("chocolate chip pancakes");
+bfastOrder("grits");
