@@ -23,3 +23,9 @@ Array.prototype.myMap = function(callback) {
     newArray = runCallback();
     return newArray;
 }
+
+// Array#myReduce(callback[, initialValue]) - 
+// (like Ruby's Array#inject) receives a callback function, and optional 
+// initial value, returns an accumulator by applying the callback function 
+// to each element and the result of the last invocation of the callback 
+// (or initial value if supplied)
