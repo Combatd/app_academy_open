@@ -7,9 +7,9 @@ Array.prototype.bubbleSort = function() {
     arr = this.slice(1);
     let sorted = false;
     // recursion
-    while (!sorted) {
+    while(!sorted) {
         sorted = true;
-        arr.forEach(ele, idx) {
+        arr.forEach( (ele, idx) => {
             if (ele < arr[idx + 1]) {
                 newEle = arr[idx + 1];
                 oldEle = arr[idx];
@@ -18,7 +18,7 @@ Array.prototype.bubbleSort = function() {
 
                 sorted = false;
             }
-        }
+        })
     }
     return arr;
 }
