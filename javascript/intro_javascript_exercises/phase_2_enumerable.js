@@ -29,3 +29,21 @@ Array.prototype.myMap = function(callback) {
 // initial value, returns an accumulator by applying the callback function 
 // to each element and the result of the last invocation of the callback 
 // (or initial value if supplied)
+
+Array.prototype.myReduce = function(callback, initialValue) {
+    let arr = this;
+    
+    // default if initialValue not provided
+    if (!initialValue) {
+        initialValue = this[0];
+        arr = arr.slice(1);
+    }
+
+    let result = initialValue
+
+    arr.myEach(function(ele) {
+        result = callback(result, ele)
+    });
+
+    return result;
+}
