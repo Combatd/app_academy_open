@@ -3,7 +3,6 @@ const range = (start, end) => {
     if (!start || !end) {
         return self;
     }
-
     let index = 0 + end;
     let rangeArr = [];
     while (index >= start) {
@@ -15,7 +14,6 @@ const range = (start, end) => {
 
 console.log(range(1, 5));
 
-
 // sumRec(arr) - receives an array of numbers and recursively sums them
 
 function sumRec(arr) {
@@ -25,10 +23,8 @@ function sumRec(arr) {
     if (arr.length === 1) {
         return arr[0];
     }
-    
     let index = arr.length - 1;
     let sum = 0;
-
     while(index >= 0) {
         sum += arr[index];
         index--;
