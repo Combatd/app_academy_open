@@ -20,16 +20,13 @@ function sumRec(arr) {
     if (!arr[0]) {
         return false;
     }
-    if (arr.length === 1) {
+    else if (arr.length === 1) {
         return arr[0];
+    } else {
+        arr[0] += arr.pop();
+        return sumRec(arr);
     }
-    let index = arr.length - 1;
-    let sum = 0;
-    while(index >= 0) {
-        sum += arr[index];
-        index--;
-    }
-    return sum;
+    
 }
 
 console.log(sumRec([1,2,3,4,5]), " sumRec");
@@ -45,7 +42,6 @@ const exponent = (base, exp) => {
         base = base * exponent(base, exp - 1);
         return base;
     }
-
 }
 
 console.log(exponent(2, 5), " <-- exponent(base, exp)");
