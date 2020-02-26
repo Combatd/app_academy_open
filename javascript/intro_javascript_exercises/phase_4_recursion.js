@@ -35,3 +35,17 @@ function sumRec(arr) {
 console.log(sumRec([1,2,3,4,5]), " sumRec");
 
 // exponent(base, exp) - receives a base and exponent, returns the base raise to the power of the exponent(base ^ exp)
+
+const exponent = (base, exp) => {
+    if (exp === 0) {
+        return 1
+    } else if (exp === 1) {
+        return base
+    } else {
+        base = base * exponent(base, exp - 1);
+        return base;
+    }
+
+}
+
+console.log(exponent(2, 5), " <-- exponent(base, exp)");
