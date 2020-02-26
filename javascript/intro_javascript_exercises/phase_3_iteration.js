@@ -25,7 +25,6 @@ Array.prototype.bubbleSort = function() {
 
 String.prototype.substrings = function() {
     string = self.slice(1);
-
     substrings = string.split("");
     substrings = substrings.filter(element => element.length > 0);
     return substrings;
