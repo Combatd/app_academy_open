@@ -45,3 +45,23 @@ const exponent = (base, exp) => {
 }
 
 console.log(exponent(2, 5), " <-- exponent(base, exp)");
+
+// fibonacci(n) - receives an integer, n, and returns the first n Fibonacci numbers
+// Fn = Fn - 1 =+ Fn - 2
+function fibonacci(n) {
+
+    
+    if (n === 1) {
+       return [0]
+    } else if (n === 2)  {
+        return [0, 1];
+    } 
+        let fibArray = fibonacci(n - 1);
+        f1 = 1;
+        f2 = 2;
+        
+        fibArray.push(fibArray[fibArray.length - f1] + fibArray[fibArray.length - f2])
+        return fibArray;
+}
+
+console.log(fibonacci(7), " <-- fibonacci(n)");
