@@ -50,7 +50,6 @@ console.log(exponent(2, 5), " <-- exponent(base, exp)");
 // Fn = Fn - 1 =+ Fn - 2
 function fibonacci(n) {
 
-    
     if (n === 1) {
        return [0]
     } else if (n === 2)  {
@@ -65,3 +64,19 @@ function fibonacci(n) {
 }
 
 console.log(fibonacci(7), " <-- fibonacci(n)");
+
+// deepDup(arr) - deep dup of an Array
+const deepDup = (arr) => {
+    // check if "not an instance of the Array class" is true
+    // If it isn't an Array.new, then we just return right away
+    if (!(arr instanceof Array)) {
+        return arr;
+    }
+    // if created by Array.new, we have to map through that instance
+    // that has prototypal inheritance from Array class
+    return arr.map( (ele) => {
+        return deepDup(ele);
+    });
+}
+
+console.log(deepDup([1, 2, 2, 3, 3, 3]));
