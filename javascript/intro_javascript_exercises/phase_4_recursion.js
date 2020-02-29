@@ -80,3 +80,24 @@ const deepDup = (arr) => {
 }
 
 console.log(deepDup([1, 2, 2, 3, 3, 3]));
+
+// bsearch(arr, target) - receives a sorted array, 
+// returns the index of the target or -1 if not found
+function bsearch(arr, target) {
+    if(!(arr instanceof Array)) {
+        return -1;
+    }
+    let result = -1;
+    
+    arr.forEach( (ele, index) => {
+        if (ele === target) {
+            result = index;
+        } else if ( index === arr.length - 1 && ele !== target) {
+            return -1;
+        }
+    });
+
+    return result;
+}
+const bSearchTest = [1, 2, 2, 3, 3, 3];
+console.log(bsearch(bSearchTest, 3), " <- bsearch");
