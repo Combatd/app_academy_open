@@ -99,3 +99,16 @@ function bsearch(arr, target) {
 }
 const bSearchTest = [1, 2, 2, 3, 3, 3];
 console.log(bsearch(bSearchTest, 3), " <- bsearch");
+
+const mergesort = (arr) => {
+    if (arr[0] < arr[1]) {
+        let first = arr.slice(0, 1);
+        let second = arr.slice(1, 2);
+        arr[0] = second;
+        arr[1] = first;
+    }
+
+
+}
+
+const mergeSortTest = [5, 2, 3, 2, 3, 1];
