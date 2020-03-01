@@ -90,6 +90,8 @@ function bsearch(arr, target) {
     
     if (arr[0] === target) {
         return target;
+    } else if (arr[0] !== target && arr.length === 1) {
+        return -1
     } else {
         let newArr = arr.slice(1, arr.length);
         return bsearch(newArr, target);
