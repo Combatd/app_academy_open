@@ -87,17 +87,13 @@ function bsearch(arr, target) {
     if(!(arr instanceof Array)) {
         return -1;
     }
-    let result = -1;
     
-    arr.forEach( (ele, index) => {
-        if (ele === target) {
-            result = index;
-        } else if ( index === arr.length - 1 && ele !== target) {
-            return -1;
-        }
-    });
-
-    return result;
+    if (arr[0] === target) {
+        return target;
+    } else {
+        let newArr = arr.slice(1, arr.length);
+        return bsearch(newArr, target);
+    }
 }
 const bSearchTest = [1, 2, 2, 3, 3, 3];
 console.log(bsearch(bSearchTest, 3), " <- bsearch");
