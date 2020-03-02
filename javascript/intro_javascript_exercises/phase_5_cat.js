@@ -14,3 +14,10 @@ let nekoTwo = new Cat("Luna", "Usagi");
 
 console.log(nekoOne.cuteStatement());
 console.log(nekoTwo.cuteStatement());
+
+Cat.prototype.cuteStatement = function() {
+    return `Everyone loves ${this.name}`;
+}
+
+console.log(nekoOne.cuteStatement());
+console.log(nekoTwo.cuteStatement());
