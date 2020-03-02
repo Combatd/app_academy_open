@@ -101,14 +101,37 @@ const bSearchTest = [1, 2, 2, 3, 3, 3];
 console.log(bsearch(bSearchTest, 3), " <- bsearch");
 
 const mergesort = (arr) => {
-    if (arr[0] < arr[1]) {
-        let first = arr.slice(0, 1);
-        let second = arr.slice(1, 2);
-        arr[0] = second;
-        arr[1] = first;
+    if(arr.length === 1) {
+        return arr;
+    } else {
+        const middle = Math.floor(arr.length / 2);
+        const low = mergesort(arr.slice(0, middle));
+        const high = mergesort(arr.slice(middle));
+
+        return mergeHelper(low, high);
     }
 
+    
+}
 
+const mergeHelper = (low, high) => {
+    mergedArr = [];
+    
+    while(low.length > 0 && high.length > 0)  {
+        if (low[0] < high[0]) {
+            // keep it in the front as the lower integer
+            mergedArr.push(low.shift());
+        } else {
+            // high is actually the low
+            mergedArr.push(high.shift());
+        }
+         // alternative but harder to read
+         // let nextEle = (left[0] < right[0]) ? left.shift() : right.shift();
+         // merged.push(nextEle);
+    }
+    // concatenate the two back together
+    return mergedArr.concat(low, high);
 }
 
 const mergeSortTest = [5, 2, 3, 2, 3, 1];
+console.log(mergesort(mergeSortTest) + " <-- mergesort with helper function");
