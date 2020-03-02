@@ -16,7 +16,7 @@ Student.prototype.enroll = function(course) {
     }
     
     this.courses.push(course);
-    course.students.push(this);
+    course.addStudents(this);
 }
 
 Student.prototype.courseLoad = function() {
@@ -32,4 +32,9 @@ function Course(courseName, department, credits) {
     this.courseName = courseName;
     this.department = department;
     this.credits = credits;
+    this.students = [];
+}
+
+Course.prototype.addStudents = function(student) {
+    this.students.push(student);
 }
