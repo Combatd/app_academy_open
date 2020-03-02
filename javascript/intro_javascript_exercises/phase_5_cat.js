@@ -4,3 +4,7 @@ class Cat {
         this.owner = owner;
     }
 }
+
+Cat.prototype.cuteStatement = () => {
+    return `${owner} lovse ${name}`;
+}
