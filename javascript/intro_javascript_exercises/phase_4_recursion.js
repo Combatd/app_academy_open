@@ -135,3 +135,27 @@ const mergeHelper = (low, high) => {
 
 const mergeSortTest = [5, 2, 3, 2, 3, 1];
 console.log(mergesort(mergeSortTest) + " <-- mergesort with helper function");
+
+// subsets(arr) - receives an array, 
+// returns an array containing all the subsets of the original array
+function subsets(arr){
+    if(arr.length === 1) {
+        return arr;
+    } else if (arr.length === 2) {
+        let newArr = [];
+        let copiedArr = arr.slice(0);
+
+        let subOne = [copiedArr[0]]
+        let subTwo = [copiedArr[0], copiedArr[1]];
+        let subThree = [copiedArr[1], copiedArr[0]];
+        let subFour = [copiedArr[1]];
+
+        newArr.push(subOne);
+        newArr.push(subTwo);
+        newArr.push(subThree);
+        newArr.push(subFour);
+        return newArr;
+    }
+}
+
+console.log(subsets([1, 2]))
