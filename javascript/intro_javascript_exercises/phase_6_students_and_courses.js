@@ -27,3 +27,9 @@ Student.prototype.courseLoad = function() {
     });
     return departmentHash;
 }
+
+function Course(courseName, department, credits) {
+    this.courseName = courseName;
+    this.department = department;
+    this.credits = credits;
+}
