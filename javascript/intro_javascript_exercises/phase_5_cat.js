@@ -28,3 +28,10 @@ Cat.prototype.meow = function() {
 
 console.log(nekoOne.meow());
 console.log(nekoTwo.meow());
+
+nekoOne.meow = function() {
+    return `${this.name} says nya!`;
+}
+
+console.log(nekoOne.meow());
+console.log(nekoTwo.meow());
