@@ -21,3 +21,10 @@ Cat.prototype.cuteStatement = function() {
 
 console.log(nekoOne.cuteStatement());
 console.log(nekoTwo.cuteStatement());
+
+Cat.prototype.meow = function() {
+    return `${this.name} says 'meow!'`;
+}
+
+console.log(nekoOne.meow());
+console.log(nekoTwo.meow());
