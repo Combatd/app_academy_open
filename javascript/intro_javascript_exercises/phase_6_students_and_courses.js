@@ -14,7 +14,6 @@ Student.prototype.enroll = function(course) {
     if (this.courses.includes(course)) {
         return -1;
     }
-    
     this.courses.push(course);
     course.addStudents(this);
 }
