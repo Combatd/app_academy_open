@@ -39,3 +39,11 @@ function Course(courseName, department, credits, timeBlock, daysOfWeek) {
 Course.prototype.addStudents = function(student) {
     this.students.push(student);
 }
+
+Course.prototype.conflictsWith = function(secondCourse) {
+    if (this === secondCourse) {
+        return true;
+    } else {
+        return false;
+    }
+}
