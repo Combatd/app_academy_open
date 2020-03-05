@@ -32,18 +32,14 @@ Array.prototype.myMap = function(callback) {
 
 Array.prototype.myReduce = function(callback, initialValue) {
     let arr = this;
-    
     // default if initialValue not provided
     if (!initialValue) {
         initialValue = this[0];
         arr = arr.slice(1);
     }
-
     let result = initialValue
-
     arr.myEach(function(ele) {
         result = callback(result, ele)
     });
-
     return result;
 }
