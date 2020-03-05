@@ -27,11 +27,13 @@ Student.prototype.courseLoad = function() {
     return departmentHash;
 }
 
-function Course(courseName, department, credits) {
+function Course(courseName, department, credits, timeBlock, daysOfWeek) {
     this.courseName = courseName;
     this.department = department;
     this.credits = credits;
     this.students = [];
+    this.timeBlock = timeBlock;
+    this.daysOfWeek = daysOfWeek;
 }
 
 Course.prototype.addStudents = function(student) {
