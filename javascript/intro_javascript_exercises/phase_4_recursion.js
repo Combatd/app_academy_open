@@ -25,8 +25,7 @@ function sumRec(arr) {
     } else {
         arr[0] += arr.pop();
         return sumRec(arr);
-    }
-    
+    }  
 }
 
 console.log(sumRec([1,2,3,4,5]), " sumRec");
