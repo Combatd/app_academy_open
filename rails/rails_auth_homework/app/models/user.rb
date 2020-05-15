@@ -20,4 +20,8 @@ class User < ApplicationRecord
         self.save!
         self.session_token
     end
+
+    def ensure_session_token
+        self.session_token = User.generate_session_token if self.session_token.nil?
+    end
 end
