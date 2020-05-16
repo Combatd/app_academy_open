@@ -30,3 +30,21 @@ This evening, you will be building a User model for a Rails auth system. This pr
     * Remember: you have to add an attr_reader for password for the validation to occur!
 
 ## Phase 4: Check your work
+* Check your model against the solutions
+* Try creating a user in the Rails console
+    * Make sure your validations work, and also make sure that you're storing password_digest as an encrypted string
+
+```
+User.all # shows no users
+empty_gage = User.new
+empty_gage.save # rollback because of failed validations
+password_too_short_gage = User.new(username: 'gage', password: 'test')
+password_too_short_gage.save # rollback because of failed validations
+gage = User.new(username: 'gage', password: 'testing')
+gage.save # inserted into Users
+User.all #<ActiveRecord::Relation [#<User id: 1, username: "gage"...
+User.first.password_digest # shows a string of gibberish that you can't hack
+```
+
+## Phase 5: Celebrate
+* You have written an important part of a Rails auth system!
