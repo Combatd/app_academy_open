@@ -5,6 +5,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // const ctx = canvas.getContext(contextType, contextAttributes);
     const ctx = canvasElement.getContext('2d');
-    ctx.fillstyle = "#FF0000";
+    ctx.fillStyle = "#FF0000";
     ctx.fillRect(20, 20, 500, 500);
 });
