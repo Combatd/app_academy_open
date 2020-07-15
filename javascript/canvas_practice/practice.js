@@ -12,10 +12,17 @@ document.addEventListener("DOMContentLoaded", function(){
     // Draw a Circle
     ctx.beginPath();
     // ctx.arc(x, y, radius, startAngle, endAngle [, anticlockwise]);
-    ctx.arc(100, 100, 50, 0, 2 * Math.PI, true)
+    ctx.arc(200, 200, 50, 0, 2 * Math.PI, true)
     ctx.strokeStyle = 'blue';
     ctx.lineWidth = 6;
     ctx.stroke();
     ctx.fillStyle = 'purple';
+    ctx.fill();
+
+    // Draw a triangle
+    ctx.beginPath();
+    ctx.moveTo(200, 100);
+    ctx.lineTo(75, 100);
+    ctx.lineTo(75, 50);
     ctx.fill();
 });
